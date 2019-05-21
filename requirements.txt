@@ -9,3 +9,4 @@ whitenoise==4.1.2
 plotly==3.9.0
 orca==1.2.0
 psutil==5.6.2
+plotly-orca==1.2.0
