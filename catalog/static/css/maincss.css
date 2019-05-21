@@ -387,7 +387,7 @@ html{
     }
 
     #statImage1, #statImage2{
-        max-width: 100% !important;
+        max-width: 100%;
     }
 
     #statImHead1, #statImHead2, #statImDesc1, #statImDesc2{
