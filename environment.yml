@@ -1,13 +1,13 @@
 name: renault-shop
 dependencies:
-	dj-database-url
-	Django
-	gunicorn
-	Pillow
-	pytz
-	sqlparse
-	psycopg2
-	whitenoise
-	plotly
-	psutil
-	plotly-orca
+ - dj-database-url
+ - Django
+ - gunicorn
+ - Pillow
+ - pytz
+ - sqlparse
+ - psycopg2
+ - whitenoise
+ - plotly
+ - psutil
+ - plotly-orca
