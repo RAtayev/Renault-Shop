@@ -167,8 +167,20 @@ function addStatistic(tempArrayStat){
             type: 'pie'
         }
     ];
-    Plotly.newPlot('statImage1', dataStat1);
-    Plotly.newPlot('statImage2', dataStat2);
+    var layout1 = {
+        width: '100vw',
+        xaxis: {
+            title: 'Месяц'
+        },
+        yaxis: {
+            title: 'Выручка,(BYN)'
+        },
+    };
+    var layout2 = {
+        width: '100%',
+    };
+    Plotly.newPlot('statImage1', dataStat1, layout1, {responsive: true});
+    Plotly.newPlot('statImage2', dataStat2, layout2, {responsive: true});
 }
 
 document.getElementById("orderButton").addEventListener("click", event => {

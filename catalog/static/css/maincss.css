@@ -247,7 +247,7 @@ html{
     
     #head, #statHead, #statImHead1, #statImHead2{
         box-sizing: border-box;
-        font-size: 4.5vh;
+        font-size: 4vh;
         font-weight: bold;
         width: 100%;
         margin-top: 2vh;
@@ -385,9 +385,9 @@ html{
         margin-top: 2vh;
         margin-bottom: 2vh;
     }
-    
-    .statImage{
-        width: 100%;
+
+    #statImage1, #statImage2{
+        max-width: 100% !important;
     }
 
     #statImHead1, #statImHead2, #statImDesc1, #statImDesc2{
@@ -396,4 +396,5 @@ html{
         margin-left: 2vh;
         margin-right: 2vh;
     }
+
 }
