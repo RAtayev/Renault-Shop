@@ -168,7 +168,6 @@ function addStatistic(tempArrayStat){
         }
     ];
     var layout1 = {
-        width: '100vw',
         xaxis: {
             title: 'Месяц'
         },
@@ -177,7 +176,6 @@ function addStatistic(tempArrayStat){
         },
     };
     var layout2 = {
-        width: '100%',
     };
     Plotly.newPlot('statImage1', dataStat1, layout1, {responsive: true});
     Plotly.newPlot('statImage2', dataStat2, layout2, {responsive: true});
