@@ -84,8 +84,7 @@ function loadStatistic(){
     let xhr = new XMLHttpRequest;
     xhr.open('GET', '/catalog/statistic')
     xhr.onload = function(){
-        console.log(xhr.responseText);
-        addStatistic();
+        addStatistic(JSON.parse(xhr.responseText));
     }
     xhr.send();
 }
@@ -153,29 +152,23 @@ function addAutos(autosArray){
     }
 }
 
-function addStatistic(){
+function addStatistic(tempArrayStat){
     console.log("Stat is begin")
-    if(document.getElementById("statImage1")){
-        var oldStatImg1 = document.getElementById("statImage1");
-        oldStatImg1.parentNode.removeChild(oldStatImg1);
-    }
-    if(document.getElementById("statImage2")){
-        var oldStatImg2 = document.getElementById("statImage2");
-        oldStatImg2.parentNode.removeChild(oldStatImg2);
-    }
-    let statImage1 = document.createElement('img');
-    statImage1.className = "statImage";
-    statImage1.id = "statImage1";
-    statImage1.src = "/media/statistic/static.png";
-    statImage1.alt = "Statistic_1";
-    let statImage2 = document.createElement('img');
-    statImage2.className = "statImage";
-    statImage2.id = "statImage2";
-    statImage2.src = "/media/statistic/static_1.png";
-    statImage2.alt = "Statistic_2";
-    document.getElementById("SIC1").appendChild(statImage1);
-    document.getElementById("SIC2").appendChild(statImage2);
-    console.log("Stat is done")
+    var dataStat1 = [
+        {
+            x: tempArrayStat[0],
+            y: tempArrayStat[1],
+            type: 'bar'
+        }
+    ];
+    var dataStat2 = [
+        {
+            labels: tempArrayStat[2],
+            type: 'pie'
+        }
+    ];
+    Plotly.newPlot('statImage1', dataStat1);
+    Plotly.newPlot('statImage2', dataStat2);
 }
 
 document.getElementById("orderButton").addEventListener("click", event => {

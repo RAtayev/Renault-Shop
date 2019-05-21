@@ -35,30 +35,7 @@ def statistic(request):
         stat_arrX.append(str(temp_date.month) + "/" + str(temp_date.year))
         stat_arrY.append(Order.objects.all()[i].auto.price)
         stat_arr_name.append(Order.objects.all()[i].auto.name)
-        # stat_arrX.append("0"+str(i)+"/2019")
-        # sum = 0
-        # query_set = Order.objects.filter(date__month="0"+str(i), date__year="2019")
-        # query_len = query_set.count()
-        # for j in range(query_len):
-        #     sum += query_set[j].auto.price
-        # stat_arrY.append(sum)
-    print(stat_arrX)
-    print(stat_arrY)
-    print(stat_arr_name)
-    
-    hist = go.Histogram(histfunc="sum", y=stat_arrY, x=stat_arrX, name="Выручка")
-    data = go.Data([hist])
-    layout=go.Layout(title='Статистика по продажам', xaxis={'title':'Месяц'}, yaxis={'title':'Выручка(BYN)'})
-    fig=go.Figure(data=data,layout=layout)
-    pio.write_image(fig, 'media/statistic/static.png')
-    
-    pie = go.Pie(labels=stat_arr_name)
-    data1 = go.Data([pie])
-    layout1 = go.Layout(title='Продаваемость авто')
-    fig1 = go.Figure(data=data1,layout=layout1)
-    pio.write_image(fig1, 'media/statistic/static_1.png')
-
-    return HttpResponse("Ok")
+    return JsonResponse(list([stat_arrX, stat_arrY, stat_arr_name]), safe=False)
 
 
 
