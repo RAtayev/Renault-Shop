@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    {% load static %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/maincss.css' %}">
+</head>
+<body>
+    <div id="meta_container">
+        <div class="menu">
+            <div id="logo_container">
+                {% load static %}
+                <img id="logo" src="{% static 'images/logo.png' %}" alt="Logo"/>
+            </div>
+            <div class="tabs_container">
+                <div id="main">
+                    Главная
+                </div>
+                <div id="statistic">
+                    Статистика
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div id="main_content">
+                <div id="head">Главная страница</div>
+                <div id="desc">Выберите автомобиль и закажите онлайн</div>
+                <div id="autos"></div>
+            </div>
+            <div id="statistic_content" style="display: none">
+                <div id="statHead">Статистика</div>
+                <div id="statDesc">Просматривайте статистику продаж автомобилей</div>
+                <div class="statImageContainer" id="SIC1">
+                    <div id="statImHead1">Объемы продаж</div>
+                    <div id="statImDesc1">Выручка от онлайн-заказов по месяцам</div>
+                </div>
+                <div class="statImageContainer" id="SIC2">
+                    <div id="statImHead2">Продаваемость авто</div>
+                    <div id="statImDesc2">Доля заказов каждого автомобиля</div>
+                </div>
+            </div>
+        </div>
+        <div class="b-popup" style="display: none">
+            <div class="b-popup-content">
+                <div id="orderMake">Оформление заказа</div>
+                <button id="orderButton">ОФОРМИТЬ ЗАКАЗ</button>
+            </div>
+        </div>
+    </div>
+    {% load static %}
+    <script src="{% static 'main.js' %}"></script>
+</body>
+</html>
