@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '6!ujtnhtr(f_)&(hidb8e23-wf6v#o
 # DEBUG = True
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = ['renault-shop.herokuapp.com/','127.0.0.1']
+ALLOWED_HOSTS = ['renault-shop.herokuapp.com','127.0.0.1']
 
 
 # Application definition
