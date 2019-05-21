@@ -131,7 +131,7 @@ function addAutos(autosArray){
             autoImageContainer.className = "autoImageContainer";
             let autoImage = document.createElement('img');
             autoImage.id = "autoImage";
-            let tempsrc = "/static/" + autosArray[i]["image"];
+            let tempsrc = "/media/" + autosArray[i]["image"];
             console.log(tempsrc);
             autoImage.src = tempsrc;
             autoImage.alt = autosArray[i][Object.keys(autosArray[i])[1]];
@@ -166,12 +166,12 @@ function addStatistic(){
     let statImage1 = document.createElement('img');
     statImage1.className = "statImage";
     statImage1.id = "statImage1";
-    statImage1.src = "/static/statistic/static_image.png";
+    statImage1.src = "/media/statistic/static.png";
     statImage1.alt = "Statistic_1";
     let statImage2 = document.createElement('img');
     statImage2.className = "statImage";
     statImage2.id = "statImage2";
-    statImage2.src = "/static/statistic/static_image1.png";
+    statImage2.src = "/media/statistic/static_1.png";
     statImage2.alt = "Statistic_2";
     document.getElementById("SIC1").appendChild(statImage1);
     document.getElementById("SIC2").appendChild(statImage2);

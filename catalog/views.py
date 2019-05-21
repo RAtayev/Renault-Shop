@@ -50,13 +50,13 @@ def statistic(request):
     data = go.Data([hist])
     layout=go.Layout(title='Статистика по продажам', xaxis={'title':'Месяц'}, yaxis={'title':'Выручка(BYN)'})
     fig=go.Figure(data=data,layout=layout)
-    pio.write_image(fig, 'e:\\work\\js-tasks\\site\\autoshop\\autoshop\\catalog\\static\\statistic\\static_image.png')
+    pio.write_image(fig, 'media/statistic/static.png')
     
     pie = go.Pie(labels=stat_arr_name)
     data1 = go.Data([pie])
     layout1 = go.Layout(title='Продаваемость авто')
     fig1 = go.Figure(data=data1,layout=layout1)
-    pio.write_image(fig1, 'e:\\work\\js-tasks\\site\\autoshop\\autoshop\\catalog\\static\\statistic\\static_image1.png')
+    pio.write_image(fig1, 'media/statistic/static_1.png')
 
     return HttpResponse("Ok")
 
