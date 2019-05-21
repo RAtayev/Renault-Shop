@@ -247,20 +247,20 @@ html{
     
     #head, #statHead, #statImHead1, #statImHead2{
         box-sizing: border-box;
-        font-size: 4vh;
+        font-size: 6vw;
         font-weight: bold;
         width: 100%;
-        margin-top: 2vh;
-        margin-left: 2vh;
+        margin-top: 4vw;
+        margin-left: 4vw;
     }
     
     #desc, #statDesc, #statImDesc1, #statImDesc2{
         box-sizing: border-box;
-        font-size: 2.2vh;
+        font-size: 4vw;
         font-weight: bold;
         width: 100%;
-        margin-bottom: 2vh;
-        margin-left: 2vh;
+        margin-bottom: 4vw;
+        margin-left: 4vw;
     }
 
     #autos{
@@ -279,7 +279,7 @@ html{
         box-sizing: border-box;
         width: 100%;
         height: 40vw;
-        margin: 2vh;
+        margin: 4vw;
         box-shadow: 0 0 1vh 0.5vh rgba(221, 221, 221, 1);
     }
     
@@ -287,7 +287,7 @@ html{
         display: block;
         max-width: 50%;
         max-height: 50%;
-        margin: 0px 2vh;
+        margin: 0px 4vw;
         overflow: hidden;
     }
     
@@ -301,28 +301,28 @@ html{
         font-size: 4vw;
         font-weight: normal;
         margin: 0vh;
-        margin-left: 2vh;
+        margin-left: 4vw;
     }
     
     .nameAuto{
-        font-size: 4vw;
+        font-size: 5vw;
         font-weight: bold;
         margin: 0vh;
-        margin-left: 2vh;
+        margin-left: 4vw;
     }
     
     #textCont{
-        margin-top: 2vh;
+        margin-top: 4vw;
         width: 40%;
     }
 
     .orderAuto{
-        margin: 0px 2vh;
-        height: 30%px;
+        margin: 0px 4vw;
+        height: 30%;
         font-weight: bold;
         background: orange;
         border: none;
-        font-size: 4vh;
+        font-size: 6vw;
         width: 100%;
     }    
 
@@ -340,8 +340,8 @@ html{
     
     .b-popup .b-popup-content{
         width: 80vw;
-        height: 25vh;
-        padding: 2.5vh;
+        height: 30vw;
+        padding: 5vw;
         background-color: white;
         box-shadow: 0px 0px 10px #000;
         display: flex;
@@ -351,7 +351,7 @@ html{
     
     #orderMake{
         box-sizing: border-box;
-        font-size: 4vh;
+        font-size: 6vw;
         font-weight: bold;
         width: 100%;
         margin-top: 0vh;
@@ -362,28 +362,29 @@ html{
         font-weight: bold;
         background: orange;
         border: none;
-        font-size: 3vh;
+        font-size: 4vw;
         width: 100%;
         height: 30%;
         margin: 0vh;
     }
     
     .labCont{
-        font-size: 2.8vh;
+        font-size: 3vw;
         display: flex;
         font-weight: bold;
     }
     
     #orderDate, #orderAutoName{
         font-weight: normal;
+        font-size: 3vw;
     }
     
     #SIC1, #SIC2{
         max-width: 100vw;
-        padding-top: 2vh;
+        padding-top: 4vw;
         box-shadow: 0 0 1vh 0.5vh rgba(221, 221, 221, 1);
-        margin-top: 2vh;
-        margin-bottom: 2vh;
+        margin-top: 4vw;
+        margin-bottom: 4vw;
     }
 
     #statImage1, #statImage2{
@@ -393,8 +394,8 @@ html{
     #statImHead1, #statImHead2, #statImDesc1, #statImDesc2{
         margin-top: 0vh;
         margin-bottom: 0vh;
-        margin-left: 2vh;
-        margin-right: 2vh;
+        margin-left: 4vw;
+        margin-right: 4vw;
     }
 
 }

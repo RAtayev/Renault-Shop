@@ -10,7 +10,6 @@ function mainPage(){
     document.getElementById("statistic").style.borderBottom = "none";
     statistic.style.display = "none";
     main.style.display = "";
-    console.log("Main");
 }
 
 function statisticPage(){
@@ -19,7 +18,6 @@ function statisticPage(){
     document.getElementById("statistic").style.borderBottom = "0.5vh solid orange";
     main.style.display = "none";
     statistic.style.display = "";
-    console.log("Statistic");
 }
 
 function fillOrder(tempAutoName){
@@ -74,7 +72,6 @@ function loadAutos(){
     xhr.open('GET', '/catalog/main');
     xhr.onload = function(){
         autosArr = JSON.parse(xhr.responseText);
-        console.log(autosArr)
         addAutos(autosArr);
     };
     xhr.send();
@@ -101,7 +98,6 @@ window.onload = locationHashChanged;
 window.onhashchange = locationHashChanged;
 
 function addAutos(autosArray){
-    console.log("addingAutos");
     if(document.getElementById("autos")){
         var autos = document.getElementById("autos");
         var autosCont = autos.parentElement;
@@ -113,7 +109,6 @@ function addAutos(autosArray){
     autos = document.getElementById("autos");
     for(let i = 0; i < autosArray.length; i++)
     {
-            console.log("2");
             let textCont = document.createElement('div');
             textCont.id = "textCont";
             let auto = document.createElement('div');
@@ -131,7 +126,6 @@ function addAutos(autosArray){
             let autoImage = document.createElement('img');
             autoImage.id = "autoImage";
             let tempsrc = "/media/" + autosArray[i]["image"];
-            console.log(tempsrc);
             autoImage.src = tempsrc;
             autoImage.alt = autosArray[i][Object.keys(autosArray[i])[1]];
             let orderAuto = document.createElement('button');
@@ -153,7 +147,6 @@ function addAutos(autosArray){
 }
 
 function addStatistic(tempArrayStat){
-    console.log("Stat is begin")
     var dataStat1 = [
         {
             x: tempArrayStat[0],
@@ -174,8 +167,10 @@ function addStatistic(tempArrayStat){
         yaxis: {
             title: 'Выручка,(BYN)'
         },
+        automargin: true,
     };
     var layout2 = {
+        automatgin: true,
     };
     Plotly.newPlot('statImage1', dataStat1, layout1, {responsive: true});
     Plotly.newPlot('statImage2', dataStat2, layout2, {responsive: true});
@@ -185,14 +180,12 @@ document.getElementById("orderButton").addEventListener("click", event => {
     var param1 = document.getElementById("orderAutoName").innerHTML;
     var param2 = document.getElementById("orderDate").value;
     var params = 'name=' + encodeURIComponent(param1) + '&date=' + encodeURIComponent(param2);
-    console.log(params);
     if(param2){
         let xhr = new XMLHttpRequest;
         xhr.open('Post', '/catalog/order/', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onreadystatechange = function(){
             if(xhr.readyState == 4 && xhr.status == 200){
-                console.log(xhr.responseText);
                 document.getElementsByClassName('b-popup')[0].click();
             }
         };
@@ -201,7 +194,6 @@ document.getElementById("orderButton").addEventListener("click", event => {
 })
 
 document.getElementsByClassName('b-popup')[0].addEventListener('click', event => {
-    console.log(event.currentTarget);
     if(event.target === event.currentTarget){
     event.currentTarget.style.display="none";
     location.hash="#/main/"
