@@ -71,7 +71,7 @@ function locationHashChanged(){
 
 function loadAutos(){
     let xhr = new XMLHttpRequest;
-    xhr.open('GET', 'http://localhost:8000/catalog/main');
+    xhr.open('GET', '/catalog/main');
     xhr.onload = function(){
         autosArr = JSON.parse(xhr.responseText);
         console.log(autosArr)
@@ -82,7 +82,7 @@ function loadAutos(){
 
 function loadStatistic(){
     let xhr = new XMLHttpRequest;
-    xhr.open('GET', 'http://localhost:8000/catalog/statistic')
+    xhr.open('GET', '/catalog/statistic')
     xhr.onload = function(){
         console.log(xhr.responseText);
         addStatistic();
@@ -185,7 +185,7 @@ document.getElementById("orderButton").addEventListener("click", event => {
     console.log(params);
     if(param2){
         let xhr = new XMLHttpRequest;
-        xhr.open('Post', 'http://localhost:8000/catalog/order/', true);
+        xhr.open('Post', '/catalog/order/', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onreadystatechange = function(){
             if(xhr.readyState == 4 && xhr.status == 200){
