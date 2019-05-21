@@ -151,13 +151,14 @@ function addStatistic(tempArrayStat){
         {
             x: tempArrayStat[0],
             y: tempArrayStat[1],
-            type: 'bar'
+            type: 'bar',
         }
     ];
     var dataStat2 = [
         {
             labels: tempArrayStat[2],
-            type: 'pie'
+            type: 'pie',
+            hoverinfo: 'label+percent'
         }
     ];
     var layout1 = {
@@ -167,10 +168,9 @@ function addStatistic(tempArrayStat){
         yaxis: {
             title: 'Выручка,(BYN)'
         },
-        automargin: true,
     };
     var layout2 = {
-        automatgin: true,
+        showlegend: false,
     };
     Plotly.newPlot('statImage1', dataStat1, layout1, {responsive: true});
     Plotly.newPlot('statImage2', dataStat2, layout2, {responsive: true});
