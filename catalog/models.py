@@ -10,7 +10,7 @@ class Auto(models.Model):
     """
     name = models.CharField(max_length=200, help_text="Enter a car name")
     price = models.IntegerField(help_text="Enter a car price")
-    image = models.ImageField(upload_to='autos')
+    image = models.ImageField(upload_to='/autos/')
     
     def __str__(self):
         return self.name
