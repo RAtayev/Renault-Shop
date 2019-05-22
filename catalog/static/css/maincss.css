@@ -59,7 +59,7 @@ html{
 }
 
 
-#head, #orderMake, #statHead, #statImHead1, #statImHead2{
+#head, #orderMake, #statHead, #statImHead1, #statImHead2, #orderMade{
     box-sizing: border-box;
     font-size: 40px;
     font-weight: bold;
@@ -142,7 +142,7 @@ html{
     justify-content: center;
 }
 
-.b-popup .b-popup-content{
+.b-popup .b-popup-content, .b-popup-order-response{
     width: 450px;
     height: 200px;
     padding: 30px;
@@ -338,7 +338,7 @@ html{
         justify-content: center;
     }
     
-    .b-popup .b-popup-content{
+    .b-popup .b-popup-content, .b-popup-order-response{
         width: 80vw;
         height: 30vw;
         padding: 5vw;
@@ -349,7 +349,7 @@ html{
         justify-content: space-between;
     }
     
-    #orderMake{
+    #orderMake, #orderMade{
         box-sizing: border-box;
         font-size: 6vw;
         font-weight: bold;

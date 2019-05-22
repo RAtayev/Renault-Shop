@@ -55,12 +55,13 @@ function fillOrder(tempAutoName){
 function orderPage(){
     if(orderId){
         let tempAuto = autosArr.find(element => {
-            return ("order" + element["name"]) == orderId;
+            return ("order" + element["id"]) == orderId;
         })
         fillOrder(tempAuto["name"])
     }
     else fillOrder("Машина не выбрана");
     document.getElementsByClassName("b-popup")[0].style.display="";
+    document.getElementsByClassName("b-popup-content")[0].style.display=""
 }
 
 function locationHashChanged(){
@@ -130,7 +131,7 @@ function addAutos(autosArray){
             autoImage.alt = autosArray[i][Object.keys(autosArray[i])[1]];
             let orderAuto = document.createElement('button');
             orderAuto.className = "orderAuto";
-            orderAuto.id = "order" + autosArray[i]["name"];
+            orderAuto.id = "order" + autosArray[i]["id"];
             orderAuto.innerHTML = "ЗАКАЗАТЬ";
             orderAuto.addEventListener('click', event => {
                 orderId = event.target.id;
@@ -177,18 +178,20 @@ function addStatistic(tempArrayStat){
 }
 
 document.getElementById("orderButton").addEventListener("click", event => {
-    var param1 = document.getElementById("orderAutoName").innerHTML;
+    var param1 = orderId.substring(5);
     var param2 = document.getElementById("orderDate").value;
-    var params = 'name=' + encodeURIComponent(param1) + '&date=' + encodeURIComponent(param2);
+    var params = 'id=' + encodeURIComponent(param1) + '&date=' + encodeURIComponent(param2);
     if(param2){
         let xhr = new XMLHttpRequest;
         xhr.open('Post', '/catalog/order/', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onreadystatechange = function(){
-            if(xhr.readyState == 4 && xhr.status == 200){
-                document.getElementsByClassName('b-popup')[0].click();
-            }
-        };
+        xhr.onload = function(){
+            if(xhr.status == 404) document.getElementById('orderMade').innerHTML = "Ошибка (указанный автомобиль отсутствует в базе данных)"
+            if(xhr.status == 200) document.getElementById('orderMade').innerHTML = "Заказ успешно совершен!"
+            if(xhr.status == 500) document.getElementById('orderMade').innerHTML = "Ошибка сервера!"
+            document.getElementsByClassName('b-popup-content')[0].style.display="none";
+            document.getElementsByClassName('b-popup-order-response')[0].style.display="";
+        }
         xhr.send(params);
     }
 })
@@ -196,6 +199,7 @@ document.getElementById("orderButton").addEventListener("click", event => {
 document.getElementsByClassName('b-popup')[0].addEventListener('click', event => {
     if(event.target === event.currentTarget){
     event.currentTarget.style.display="none";
+    document.getElementsByClassName('b-popup-order-response')[0].style.display="none";
     location.hash="#/main/"
     }
 })
