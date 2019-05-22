@@ -126,7 +126,7 @@ function addAutos(autosArray){
             autoImageContainer.className = "autoImageContainer";
             let autoImage = document.createElement('img');
             autoImage.id = "autoImage";
-            let tempsrc = "/media/" + autosArray[i]["image"];
+            let tempsrc = "/static/" + autosArray[i]["image"];
             autoImage.src = tempsrc;
             autoImage.alt = autosArray[i][Object.keys(autosArray[i])[1]];
             let orderAuto = document.createElement('button');
